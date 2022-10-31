@@ -1,0 +1,250 @@
+@import '../../App.scss';
+
+.FIFA2022 {
+    background-image: url('../../assets/fifa_background.jpg');
+    background-size: cover;
+    max-width: none !important;
+    height:100vh;
+    width:100vw;
+
+    .cover{
+      width:100vw;
+      height:100vh;
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:1;
+      background-color: #2e043687;
+    }
+
+    .toolbar{
+        background: #5f26c6;
+        padding: 2em; 
+        color: white;
+        margin: 3em;
+        position:fixed;
+        top: 0; 
+        left: 0; 
+        max-width: 350px;
+        box-shadow: 0px 0px 20px 2px #0000002e; 
+        z-index: 100;
+        opacity: 95%;
+
+        .MuiTypography-root {
+          color: white;
+        }
+
+        .MuiFormLabel-root {
+          color: white;
+          background: #5f26c6;
+          padding: 0px 10px;
+        }
+
+        .MuiInputBase-root, .MuiOutlinedBase-root {
+          border:1px solid white;
+        }
+
+        .TextField {
+            width: 100%;
+            margin-bottom:15px;
+            border-color: white;
+            input{
+              color: white;
+              padding-top:0.7em;
+              padding-bottom:0.7em;
+            }
+        }
+        .sliders {
+
+          .slider-container{
+            margin-bottom:10px;
+          }
+          .slider-label{
+            display:flex;
+            justify-content: space-between;
+            margin-bottom:5px;
+            .label{
+              // font-weight:bold;
+            }
+            .slider-value{
+              font-weight:bold;
+            }
+          }
+          .slider{
+            position:relative;
+            height:15px;
+            margin-bottom:5px;
+            border-radius:100px;
+            overflow:hidden;
+
+            input {
+              margin:0;
+              padding:0;
+              border:0;
+              -webkit-appearance: none;
+              appearance: none;
+              width: 100%;
+              height: 15px;
+              background: #d3d3d3;
+              outline: none;
+              opacity: 0.7;
+              border-radius:100px;
+              -webkit-transition: .2s;
+              transition: opacity .2s;
+            }
+            .track{
+              position:absolute;
+              top:0;
+              left:0;
+              background:#62d2f6;
+              height:100%;
+              width:10px;
+              border-top-left-radius:100px;
+              border-bottom-left-radius:100px;
+              pointer-events: none;
+            }
+          }
+
+          input::-webkit-slider-thumb {
+            z-index:1000;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50px;
+            height: 15px;
+            // background: #04AA6D;
+            cursor: pointer;
+          }
+          
+          input::-moz-range-thumb {
+            z-index:1000;
+            width: 50px;
+            height: 15px;
+            // background: #04AA6D;
+            cursor: pointer;
+          }
+
+        }
+        .predictBtn{
+          border: 1px solid #f615f6;
+          color: #f615f6;
+          padding: 0.8em 2.2em;
+          font-weight: bold;
+          font-size: 1em;
+          margin-top: 1em;
+          margin-bottom: 1em;
+          text-decoration: none;
+          cursor: pointer;
+          outline: 0;   
+          background:0;
+          &:hover{
+            background:#f615f6;
+            color:white;
+          }
+      }
+    }
+
+    .playerList {
+      height:100vh;
+      overflow-y:auto;
+      padding: 5em; 
+      color: black;
+      margin: 0 auto;
+      // width: 40%;
+      z-index: 11;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 1em;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      &::-webkit-scrollbar{
+        display:none;
+      }
+
+      .player-card{
+        width: 20em;
+        height: 30em;
+        background-size: 121%;
+        background-position: center;
+        .player-card-header{
+          display:flex;
+          margin-bottom: 0.5em;
+          height: 15.6em;
+          .player-card-header-left{
+            width:40%;
+            .overall{
+              font-size:3em;
+              text-align: center;
+              margin-top:2em;
+              line-height: 0.6em;
+            }
+            .position{
+              font-size:2em;
+              text-align: center;
+            }
+          }
+          .player-card-header-right{
+           width:60%;
+            img{
+              height: 12em;
+              border-radius: 10em;
+              margin-top: 2em;
+            }
+          }
+        }
+        .player-card-body {
+          .player-name{
+            font-size:2em;
+            text-align:center;
+            padding-top:0.2em;
+            position:relative;
+            // &:after{
+            //   width:3em;
+            //   height:1px;
+            //   background:black;
+            //   content:"";
+            //   position: absolute;
+            //   left: 50%;
+            //   bottom: -12px;
+            //   transform: translateX(-50%);
+
+            // }
+          }
+          .stats{
+            border-top:1px solid;
+            margin:0 3em;
+            padding:1em 0;
+            display:flex;
+            .left-stats{
+              border-right:1px solid;
+              flex-grow:1;
+              display:flex;
+              flex-direction: column;
+              align-items: start;
+            }
+            .right-stats{
+              flex-grow:1;
+              display:flex;
+              flex-direction: column;
+              align-items: end;
+            }
+            .stat{
+              display:flex;
+              text-align:center;
+              .stat-value{
+                font-size:1.5em;
+                font-weight:bold;
+                margin-right:0.5em;
+                width: 1.3em;
+              }
+              .stat-label{
+                font-size:1.5em;
+                width: 2em;
+              }
+            }
+          }
+        }
+
+      
+      }
+    }
+}
